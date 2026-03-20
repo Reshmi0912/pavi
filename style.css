@@ -7,7 +7,6 @@
 </head>
 <body>
 
-  <!-- LOGIN PAGE -->
   <div class="login-container active" id="loginPage">
     <div class="card">
       <h2>Secret Birthday Login 🎂</h2>
@@ -18,14 +17,13 @@
     </div>
   </div>
 
-  <!-- OPTION PAGE -->
   <div class="option-container" id="optionPage">
     <h1>Choose Your Surprise 🎁</h1>
     <button onclick="showPhotos()">📸 Photos</button>
     <button onclick="showGifts()">🎁 Gifts</button>
     <p id="funnyMessage" class="message"></p>
   </div>
-<!-- MAIN PHOTO PAGE -->
+
   <div class="main-container" id="mainPage">
     <h1>Happy Birthday My Best Friend ❤️</h1>
     <p class="message">
