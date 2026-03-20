@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Birthday Bestie ❤️</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- LOGIN PAGE -->
+  <div class="login-container active" id="loginPage">
+    <div class="card">
+      <h2>Secret Birthday Login 🎂</h2>
+      <input type="text" id="username" placeholder="Enter your name">
+      <input type="password" id="password" placeholder="Enter secret code">
+      <button onclick="login()">Enter</button>
+      <p id="error" class="error"></p>
+    </div>
+  </div>
+
+  <!-- OPTION PAGE -->
+  <div class="option-container" id="optionPage">
+    <h1>Choose Your Surprise 🎁</h1>
+    <button onclick="showPhotos()">📸 Photos</button>
+    <button onclick="showGifts()">🎁 Gifts</button>
+    <p id="funnyMessage" class="message"></p>
+  </div>
+<!-- MAIN PHOTO PAGE -->
+  <div class="main-container" id="mainPage">
+    <h1>Happy Birthday My Best Friend ❤️</h1>
+    <p class="message">
+      You are not just my friend, you are my happiness, my support system, and my forever person 💖
+    </p>
+
+    <div class="gallery">
+      <img src="D:\photo1.jpeg">
+      <img src="D:\photo2.jpeg">
+      <img src="D:\photo3.jpeg">
+      <img src="D:\photo4.jpeg">
+    </div>
+
+    <p class="message">
+      Thank you for all the memories, laughter, and love. I’m lucky to have you in my life ✨
+    </p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
