@@ -1,97 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Happy Birthday Bestie ❤️</title>
+<meta charset="UTF-8">
+<title>Birthday Surprise ❤️</title>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(to right, #ff9a9e, #fad0c4);
-      text-align: center;
-    }
+<style>
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, #ff9a9e, #fad0c4);
+  text-align: center;
+}
 
-    .login-container, .main-container, .option-container {
-      display: none;
-      padding: 20px;
-    }
+/* Sections */
+.login-container, .quiz-container, .option-container, .main-container {
+  display: none;
+  padding: 20px;
+}
 
-    .active {
-      display: block;
-    }
+.active {
+  display: block;
+}
 
-    .card {
-      background: white;
-      padding: 20px;
-      border-radius: 15px;
-      width: 300px;
-      margin: 100px auto;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    }
+/* Card */
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  width: 300px;
+  margin: 100px auto;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
 
-    input {
-      width: 90%;
-      padding: 10px;
-      margin: 10px;
-      border-radius: 8px;
-      border: 1px solid #ccc;
-    }
+input {
+  width: 90%;
+  padding: 10px;
+  margin: 8px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
 
-    button {
-      padding: 12px 20px;
-      margin: 10px;
-      border: none;
-      border-radius: 10px;
-      background: #ff6f91;
-      color: white;
-      cursor: pointer;
-    }
+button {
+  padding: 12px 20px;
+  margin: 10px;
+  border: none;
+  border-radius: 10px;
+  background: #ff6f91;
+  color: white;
+  cursor: pointer;
+}
 
-    button:hover {
-      background: #ff3f6c;
-    }
+button:hover {
+  background: #ff3f6c;
+}
 
-    /* Gallery Style */
-    .gallery {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-    }
+/* Gallery */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
 
-    .gallery img {
-      width: 220px;
-      height: 220px;
-      object-fit: cover;
-      border-radius: 20px;
-      transform: rotate(-3deg);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-      border: 5px solid white;
-      transition: 0.4s;
-    }
+.gallery img {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 20px;
+  transform: rotate(-3deg);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+  border: 5px solid white;
+  transition: 0.4s;
+}
 
-    .gallery img:nth-child(2) { transform: rotate(3deg); }
-    .gallery img:nth-child(3) { transform: rotate(-6deg); }
-    .gallery img:nth-child(4) { transform: rotate(5deg); }
+.gallery img:nth-child(2) { transform: rotate(3deg); }
+.gallery img:nth-child(3) { transform: rotate(-6deg); }
+.gallery img:nth-child(4) { transform: rotate(5deg); }
 
-    .gallery img:hover {
-      transform: scale(1.15) rotate(0);
-    }
+.gallery img:hover {
+  transform: scale(1.15) rotate(0);
+}
 
-    h1 {
-      color: #ff3f6c;
-    }
+h1 {
+  color: #ff3f6c;
+}
 
-    .message {
-      font-style: italic;
-      margin: 20px;
-    }
+.message {
+  font-style: italic;
+  margin: 20px;
+}
 
-    .error {
-      color: red;
-    }
-  </style>
+.error {
+  color: red;
+}
+</style>
 </head>
 
 <body>
@@ -105,6 +107,31 @@
     <button onclick="login()">Enter</button>
     <p id="error" class="error"></p>
   </div>
+</div>
+
+<!-- QUIZ PAGE -->
+<div class="quiz-container" id="quizPage">
+  <h2>Let’s see how well you remember us 💖</h2>
+
+  <p>1. When did we first meet?</p>
+  <input type="text" id="q1">
+
+  <p>2. What is our favorite thing to do together?</p>
+  <input type="text" id="q2">
+
+  <p>3. What do we talk about the most?</p>
+  <input type="text" id="q3">
+
+  <p>4. What nickname do I call you?</p>
+  <input type="text" id="q4">
+
+  <p>5. What is our funniest memory?</p>
+  <input type="text" id="q5">
+
+  <br><br>
+  <button onclick="checkAnswers()">Submit 💕</button>
+
+  <p id="scoreText"></p>
 </div>
 
 <!-- OPTION PAGE -->
@@ -124,7 +151,7 @@
   </p>
 
   <div class="gallery">
-    <!-- Replace with your real image URLs -->
+    <!-- Replace with your real image links -->
     <img src="photo1.jpeg">
     <img src="photo2.jpeg">
     <img src="photo3.jpeg">
@@ -137,27 +164,45 @@
 </div>
 
 <script>
-  function login() {
-    let user = document.getElementById("username").value;
-    let pass = document.getElementById("password").value;
+function login() {
+  let user = document.getElementById("username").value;
+  let pass = document.getElementById("password").value;
 
-    if (user === "pavi" && pass === "2403") {
-      document.getElementById("loginPage").classList.remove("active");
-      document.getElementById("optionPage").classList.add("active");
-    } else {
-      document.getElementById("error").innerText = "Wrong details! 💔";
-    }
+  if (user === "bestie" && pass === "1234") {
+    document.getElementById("loginPage").classList.remove("active");
+    document.getElementById("quizPage").classList.add("active");
+  } else {
+    document.getElementById("error").innerText = "Wrong details! 💔";
   }
+}
 
-  function showPhotos() {
-    document.getElementById("optionPage").classList.remove("active");
-    document.getElementById("mainPage").classList.add("active");
-  }
+function checkAnswers() {
+  let score = 0;
 
-  function showGifts() {
-    document.getElementById("funnyMessage").innerText =
-      "😂 No gifts! Because I am the best gift in your life 💅✨";
-  }
+  if (document.getElementById("q1").value.toLowerCase().includes("27.10.22")) score++;
+  if (document.getElementById("q2").value.toLowerCase().includes("eating fried rice")) score++;
+  if (document.getElementById("q3").value.toLowerCase().includes("everything")) score++;
+  if (document.getElementById("q4").value.toLowerCase().includes("pivitri")) score++;
+  if (document.getElementById("q5").value !== "") score++;
+
+  document.getElementById("scoreText").innerText =
+    "You scored " + score + "/5 💖";
+
+  setTimeout(() => {
+    document.getElementById("quizPage").classList.remove("active");
+    document.getElementById("optionPage").classList.add("active");
+  }, 2000);
+}
+
+function showPhotos() {
+  document.getElementById("optionPage").classList.remove("active");
+  document.getElementById("mainPage").classList.add("active");
+}
+
+function showGifts() {
+  document.getElementById("funnyMessage").innerText =
+    "😂 No gifts! Because I am the best gift in your life 💅✨";
+}
 </script>
 
 </body>
