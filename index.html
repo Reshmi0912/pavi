@@ -17,6 +17,23 @@ body {
   display: none;
   padding: 20px;
 }
+.option {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  margin: 5px auto;
+  width: 250px;
+  text-align: left;
+}
+
+.option input {
+  margin: 0;
+}
+.quiz-container {
+  max-width: 400px;
+  margin: auto;
+}
 
 .active {
   display: block;
@@ -80,23 +97,7 @@ button:hover {
 .gallery img:hover {
   transform: scale(1.15) rotate(0);
 }
-.option {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 10px;
-  margin: 5px auto;
-  width: 250px;
-  text-align: left;
-}
 
-.option input {
-  margin: 0;
-}
-.quiz-container {
-  max-width: 400px;
-  margin: auto;
-}
 h1 {
   color: #ff3f6c;
 }
@@ -130,27 +131,27 @@ h1 {
   <h2>Let’s see how well you remember us 💖</h2>
 
   <p>1. Where did we first meet?</p>
-  <label class="option"><input type="radio" name="q1" value="school"> School</label>
-  <label class="option"><input type="radio" name="q1" value="college"> College</label>
-  <label class="option"><input type="radio" name="q1" value="online"> Online</label>
+  <label class="option"><input type="radio" name="q1" value="school">School</label>
+  <label class="option"><input type="radio" name="q1" value="college">College</label>
+  <label class="option"><input type="radio" name="q1" value="online">Online</label>
  
 
   <p>2. What is our favorite thing to do together?</p>
-  <label class="option"><input type="radio" name="q2" value="playing games together"> playing games together</label>
-  <label class="option"><input type="radio" name="q2" value="eating fried rice"> eating fried rice</label>
-  <label class="option"><input type="radio" name="q2" value="watching reels together"> watching reels together</label>
+  <label class="option"><input type="radio" name="q2" value="playing games together">playing games together</label>
+  <label class="option"><input type="radio" name="q2" value="eating fried rice">eating fried rice</label>
+  <label class="option"><input type="radio" name="q2" value="watching reels together">watching reels together</label>
   
 
   <p>3. What do we talk about the most?</p>
-  <label class="option"><input type="radio" name="q3" value="everything"> Everything</label>
-  <label class="option"><input type="radio" name="q3" value="gossip"> Gossip</label>
-  <label class="option"><input type="radio" name="q3" value="study"> Study</label>
+  <label class="option"><input type="radio" name="q3" value="everything">Everything</label>
+  <label class="option"><input type="radio" name="q3" value="gossip">Gossip</label>
+  <label class="option"><input type="radio" name="q3" value="study">Study</label>
 
 
   <p>4. What nickname do I call you?</p>
-  <label class="option"><input type="radio" name="q4" value="bestie"> Bestie</label>
-  <label class="option"><input type="radio" name="q4" value="Kutta"> Kutta</label>
-  <label class="option"><input type="radio" name="q4" value="Pivithri"> Pivithri</label>
+  <label class="option"><input type="radio" name="q4" value="bestie">Bestie</label>
+  <label class="option"><input type="radio" name="q4" value="Kutta">Kutta</label>
+  <label class="option"><input type="radio" name="q4" value="Pivithri">Pivithri</label>
 
   <p>5. What is our funniest memory?</p>
   <input type="text" id="q5">
