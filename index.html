@@ -3,47 +3,162 @@
 <head>
   <meta charset="UTF-8">
   <title>Happy Birthday Bestie ❤️</title>
-  <link rel="stylesheet" href="style.css">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #ff9a9e, #fad0c4);
+      text-align: center;
+    }
+
+    .login-container, .main-container, .option-container {
+      display: none;
+      padding: 20px;
+    }
+
+    .active {
+      display: block;
+    }
+
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 15px;
+      width: 300px;
+      margin: 100px auto;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
+
+    input {
+      width: 90%;
+      padding: 10px;
+      margin: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      padding: 12px 20px;
+      margin: 10px;
+      border: none;
+      border-radius: 10px;
+      background: #ff6f91;
+      color: white;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #ff3f6c;
+    }
+
+    /* Gallery Style */
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .gallery img {
+      width: 220px;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 20px;
+      transform: rotate(-3deg);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+      border: 5px solid white;
+      transition: 0.4s;
+    }
+
+    .gallery img:nth-child(2) { transform: rotate(3deg); }
+    .gallery img:nth-child(3) { transform: rotate(-6deg); }
+    .gallery img:nth-child(4) { transform: rotate(5deg); }
+
+    .gallery img:hover {
+      transform: scale(1.15) rotate(0);
+    }
+
+    h1 {
+      color: #ff3f6c;
+    }
+
+    .message {
+      font-style: italic;
+      margin: 20px;
+    }
+
+    .error {
+      color: red;
+    }
+  </style>
 </head>
+
 <body>
 
-  <!-- LOGIN PAGE -->
-  <div class="login-container active" id="loginPage">
-    <div class="card">
-      <h2>Secret Birthday Login 🎂</h2>
-      <input type="text" id="username" placeholder="Enter your name">
-      <input type="password" id="password" placeholder="Enter secret code">
-      <button onclick="login()">Enter</button>
-      <p id="error" class="error"></p>
-    </div>
+<!-- LOGIN PAGE -->
+<div class="login-container active" id="loginPage">
+  <div class="card">
+    <h2>Secret Birthday Login 🎂</h2>
+    <input type="text" id="username" placeholder="Enter your name">
+    <input type="password" id="password" placeholder="Enter secret code">
+    <button onclick="login()">Enter</button>
+    <p id="error" class="error"></p>
+  </div>
+</div>
+
+<!-- OPTION PAGE -->
+<div class="option-container" id="optionPage">
+  <h1>Choose Your Surprise 🎁</h1>
+  <button onclick="showPhotos()">📸 Photos</button>
+  <button onclick="showGifts()">🎁 Gifts</button>
+  <p id="funnyMessage" class="message"></p>
+</div>
+
+<!-- PHOTO PAGE -->
+<div class="main-container" id="mainPage">
+  <h1>Happy Birthday My Best Friend ❤️</h1>
+
+  <p class="message">
+    You are my happiness, my support system, and my forever person 💖
+  </p>
+
+  <div class="gallery">
+    <!-- Replace with your real image URLs -->
+    <img src="photo1.jpeg">
+    <img src="photo2.jpeg">
+    <img src="photo3.jpeg">
+    <img src="photo4.jpeg">
   </div>
 
-  <!-- OPTION PAGE -->
-  <div class="option-container" id="optionPage">
-    <h1>Choose Your Surprise 🎁</h1>
-    <button onclick="showPhotos()">📸 Photos</button>
-    <button onclick="showGifts()">🎁 Gifts</button>
-    <p id="funnyMessage" class="message"></p>
-  </div>
-<!-- MAIN PHOTO PAGE -->
-  <div class="main-container" id="mainPage">
-    <h1>Happy Birthday My Best Friend ❤️</h1>
-    <p class="message">
-      You are not just my friend, you are my happiness, my support system, and my forever person 💖
-    </p>
+  <p class="message">
+    Thank you for all the memories ✨
+  </p>
+</div>
 
-    <div class="gallery">
-      <img src="D:\photo1.jpeg">
-      <img src="D:\photo2.jpeg">
-      <img src="D:\photo3.jpeg">
-      <img src="D:\photo4.jpeg">
-    </div>
+<script>
+  function login() {
+    let user = document.getElementById("username").value;
+    let pass = document.getElementById("password").value;
 
-    <p class="message">
-      Thank you for all the memories, laughter, and love. I’m lucky to have you in my life ✨
-    </p>
-  </div>
+    if (user === "pavi" && pass === "2403") {
+      document.getElementById("loginPage").classList.remove("active");
+      document.getElementById("optionPage").classList.add("active");
+    } else {
+      document.getElementById("error").innerText = "Wrong details! 💔";
+    }
+  }
 
-  <script src="script.js"></script>
+  function showPhotos() {
+    document.getElementById("optionPage").classList.remove("active");
+    document.getElementById("mainPage").classList.add("active");
+  }
+
+  function showGifts() {
+    document.getElementById("funnyMessage").innerText =
+      "😂 No gifts! Because I am the best gift in your life 💅✨";
+  }
+</script>
+
 </body>
 </html>
