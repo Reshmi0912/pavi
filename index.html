@@ -41,7 +41,7 @@ input {
 }
 
 button {
-  padding: 12px 20px;
+  padding: 10px 18px;
   margin: 10px;
   border: none;
   border-radius: 10px;
@@ -113,17 +113,28 @@ h1 {
 <div class="quiz-container" id="quizPage">
   <h2>Let’s see how well you remember us 💖</h2>
 
-  <p>1. When did we first meet?</p>
-  <input type="text" id="q1">
+  <p>1. Where did we first meet?</p>
+  <input type="radio" name="q1" value="school"> School<br>
+  <input type="radio" name="q1" value="college"> College<br>
+  <input type="radio" name="q1" value="online"> Online<br>
+ 
 
   <p>2. What is our favorite thing to do together?</p>
-  <input type="text" id="q2">
+  <input type="radio" name="q2" value="playing games together"> playing games together<br>
+  <input type="radio" name="q2" value="eating fried rice"> eating fried rice<br>
+  <input type="radio" name="q2" value="watching reels together"> watching reels together<br>
+  
 
   <p>3. What do we talk about the most?</p>
-  <input type="text" id="q3">
+  <input type="radio" name="q3" value="everything"> Everything<br>
+  <input type="radio" name="q3" value="gossip"> Gossip<br>
+  <input type="radio" name="q3" value="study"> Study<br>
+
 
   <p>4. What nickname do I call you?</p>
-  <input type="text" id="q4">
+  <input type="radio" name="q4" value="bestie"> Bestie<br>
+  <input type="radio" name="q4" value="Kutta"> Kutta<br>
+  <input type="radio" name="q4" value="Pivithri"> Pivithri<br>
 
   <p>5. What is our funniest memory?</p>
   <input type="text" id="q5">
@@ -145,6 +156,9 @@ h1 {
 <!-- PHOTO PAGE -->
 <div class="main-container" id="mainPage">
   <h1>Happy Birthday My Best Friend ❤️</h1>
+
+  <!-- BACK BUTTON -->
+  <button onclick="goBackToOptions()">⬅ Back</button>
 
   <p class="message">
     You are my happiness, my support system, and my forever person 💖
@@ -168,7 +182,7 @@ function login() {
   let user = document.getElementById("username").value;
   let pass = document.getElementById("password").value;
 
-  if (user === "bestie" && pass === "1234") {
+  if (user === "pavi" && pass === "2405") {
     document.getElementById("loginPage").classList.remove("active");
     document.getElementById("quizPage").classList.add("active");
   } else {
@@ -179,10 +193,15 @@ function login() {
 function checkAnswers() {
   let score = 0;
 
-  if (document.getElementById("q1").value.toLowerCase().includes("27.10.22")) score++;
-  if (document.getElementById("q2").value.toLowerCase().includes("eating fried rice")) score++;
-  if (document.getElementById("q3").value.toLowerCase().includes("everything")) score++;
-  if (document.getElementById("q4").value.toLowerCase().includes("pivitri")) score++;
+  let q1 = document.querySelector('input[name="q1"]:checked');
+  let q2 = document.querySelector('input[name="q2"]:checked');
+  let q3 = document.querySelector('input[name="q3"]:checked');
+  let q4 = document.querySelector('input[name="q4"]:checked');
+
+  if (q1 && q1.value === "College") score++;
+  if (q2 && q2.value === "Eating fried rice") score++;
+  if (q3 && q3.value === "Everything") score++;
+  if (q4 && q4.value === "Kutta") score++;
   if (document.getElementById("q5").value !== "") score++;
 
   document.getElementById("scoreText").innerText =
@@ -202,6 +221,12 @@ function showPhotos() {
 function showGifts() {
   document.getElementById("funnyMessage").innerText =
     "😂 No gifts! Because I am the best gift in your life 💅✨";
+}
+
+/* BACK BUTTON FUNCTION */
+function goBackToOptions() {
+  document.getElementById("mainPage").classList.remove("active");
+  document.getElementById("optionPage").classList.add("active");
 }
 </script>
 
