@@ -2,7 +2,7 @@ function login() {
   const user = document.getElementById("username").value;
   const pass = document.getElementById("password").value;
 
-  if(user === "bestie" && pass === "1234") {
+  if(user === "pavi" && pass === "2435") {
     document.getElementById("loginPage").classList.remove("active");
     document.getElementById("optionPage").classList.add("active");
   } else {
