@@ -17,16 +17,21 @@ body {
   display: none;
   padding: 20px;
 }
-.option {
-  display: flex;
-  align-items: center;
-  gap: 5px; /* space between radio and text */
-  margin: 8px 0;
-   /* center align (remove if you want left) */
-}
 
 .question {
   text-align: center;
+}
+
+.options {
+  display: inline-block;
+  text-align: left;   /* THIS aligns options properly */
+  margin-top: 10px;
+}
+
+.options label {
+  display: block;     /* Each option in new line */
+  margin: 6px 0;
+  font-size: 16px;
 }
 
 .quiz-container {
@@ -129,29 +134,44 @@ h1 {
 <div class="quiz-container" id="quizPage">
   <h2>Let’s see how well you remember us 💖</h2>
 
+  <div class="question">
   <p>1. Where did we first meet?</p>
-  <label class="option"><input type="radio" name="q1" value="school"><span>School</span></label>
-  <label class="option"><input type="radio" name="q1" value="college"><span>College</span></label>
-  <label class="option"><input type="radio" name="q1" value="online"><span>Online</span></label>
- 
 
+  <div class="options">
+    <label><input type="radio" name="q1"> School</label>
+    <label><input type="radio" name="q1"> College</label>
+    <label><input type="radio" name="q1"> Online</label>
+  </div>
+</div>
+
+<div class="question">
   <p>2. What is our favorite thing to do together?</p>
-  <label class="option"><input type="radio" name="q2" value="playing games together"><span>playing games together</span></label>
-  <label class="option"><input type="radio" name="q2" value="eating fried rice"><span>eating fried rice</span></label>
-  <label class="option"><input type="radio" name="q2" value="watching reels together"><span>watching reels together</span></label>
+
+  <div class="options">
+    <label><input type="radio" name="q2"> Playing games together</label>
+    <label><input type="radio" name="q2"> Eating fried rice</label>
+    <label><input type="radio" name="q2"> Watching reels together</label>
+  </div>
+</div>
   
-
+<div class="question">
   <p>3. What do we talk about the most?</p>
-  <label class="option"><input type="radio" name="q3" value="everything"><span>Everything</span></label>
-  <label class="option"><input type="radio" name="q3" value="gossip"><span>Gossip</span></label>
-  <label class="option"><input type="radio" name="q3" value="study"><span>Study</span></label>
 
+  <div class="options">
+    <label class="option"><input type="radio" name="q3" value="everything">Everything</label>
+    <label class="option"><input type="radio" name="q3" value="gossip">Gossip</label>
+    <label class="option"><input type="radio" name="q3" value="study">Study</label>
+  </div>
+</div>
 
+<div class="question">
   <p>4. What nickname do I call you?</p>
-  <label class="option"><input type="radio" name="q4" value="bestie"><span>Bestie</span></label>
-  <label class="option"><input type="radio" name="q4" value="Kutta"><span>Kutta</span></label>
-  <label class="option"><input type="radio" name="q4" value="Pivithri"><span>Pivithri</span></label>
-
+  <div class="options">
+    <label class="option"><input type="radio" name="q4" value="bestie">Bestie</label>
+    <label class="option"><input type="radio" name="q4" value="Kuttai">Kuttai</label>
+    <label class="option"><input type="radio" name="q4" value="Pivithri">Pivithri</label>
+  </div>
+</div>
   <p>5. What is our funniest memory?</p>
   <input type="text" id="q5">
 
